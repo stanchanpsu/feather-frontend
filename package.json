@@ -15,14 +15,15 @@
     "eslint": "^4.1.1",
     "html-webpack-plugin": "^2.29.0",
     "path": "^0.12.7",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-scripts": "1.0.7",
+    "react-hot-loader": "^3.0.0-beta.7",
+    "style-loader": "^0.18.2",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.5.0"
   },
   "scripts": {
     "start": "webpack-dev-server",
+    "clean": "rm -rf node_modules",
+    "clean:install": "npm run clean && npm install",
     "build": "webpack -p"
   }
 }

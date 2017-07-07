@@ -9,16 +9,17 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 
 
 module.exports = {
+  'devtool': 'cheap-eval-source-map',
   'entry': './src/index.js',
   'output': {
     'path': path.resolve(__dirname, 'dist'),
     'filename': 'bundle.js'
   },
   'module': {
-    'loaders': [
+    'rules': [
       { 'test': /\.js$/, 'loader': 'babel-loader', 'exclude': /node_modules/ },
       { 'test': /\.jsx$/, 'loader': 'babel-loader', 'exclude': /node_modules/ },
-      { 'test': /\.css$/, 'use': 'css-loader' }
+      { 'test': /\.css$/, 'use': ['style-loader', 'css-loader'] }
     ]
   },
   'plugins': [HtmlWebpackPluginConfig]
