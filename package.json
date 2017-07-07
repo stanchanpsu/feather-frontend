@@ -13,6 +13,7 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.4",
     "eslint": "^4.1.1",
+    "eslint-html-reporter": "^0.5.2",
     "html-webpack-plugin": "^2.29.0",
     "path": "^0.12.7",
     "react-hot-loader": "^3.0.0-beta.7",
@@ -22,8 +23,10 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
+    "lint": "eslint . --fix --ignore-path ./.eslintignore -f node_modules/eslint-html-reporter/reporter.js -o reporters/eslint-report.html",
     "clean": "rm -rf node_modules",
     "clean:install": "npm run clean && npm install",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "clean:build": "rm -rf dist && npm run clean:install && npm run lint && npm run build"
   }
 }

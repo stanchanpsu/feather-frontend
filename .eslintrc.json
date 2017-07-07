@@ -17,7 +17,7 @@
         "no-this-before-super": "error",
         "no-undef": "error",
         "no-unreachable": "error",
-        "no-unused-vars": "error",
+        "no-unused-vars": "warn",
         "constructor-super": "error",
         "valid-typeof": "error",
         "quotes": [

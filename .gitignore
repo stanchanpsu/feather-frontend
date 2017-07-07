@@ -5,9 +5,9 @@
 
 # testing
 /coverage
+/reporters
 
-# production
-/build
+# distribution
 /dist
 
 # misc
