@@ -20,7 +20,7 @@ module.exports = {
       { 'test': /\.js$/, 'loader': 'babel-loader', 'exclude': /node_modules/ },
       { 'test': /\.jsx$/, 'loader': 'babel-loader', 'exclude': /node_modules/ },
       { 'test': /\.css$/, 'use': ['style-loader', 'css-loader'] },
-      { 'test': /\.(woff|woff2|eot|ttf|otf)$/, 'use': ['file-loader']}
+      { 'test': /\.(woff|woff2|eot|ttf|otf)$/, 'use': ['file-loader?outputPath=fonts/']}
     ]
   },
   'plugins': [HtmlWebpackPluginConfig]

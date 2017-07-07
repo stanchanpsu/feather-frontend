@@ -30,6 +30,6 @@
     "clean": "rm -rf node_modules",
     "clean:install": "npm run clean && npm install",
     "build": "webpack -p",
-    "clean:build": "rm -rf dist && npm run clean:install && npm run lint && npm run build"
+    "clean:build": "rm -rf dist && npm run build"
   }
 }
