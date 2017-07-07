@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "jquery": "^3.2.1",
+    "materialize-css": "^0.99.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
@@ -14,6 +16,7 @@
     "css-loader": "^0.28.4",
     "eslint": "^4.1.1",
     "eslint-html-reporter": "^0.5.2",
+    "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.29.0",
     "path": "^0.12.7",
     "react-hot-loader": "^3.0.0-beta.7",

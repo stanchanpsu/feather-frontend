@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './materialize/css/materialize.min.css';
 
 function Square(props) {
   return (
