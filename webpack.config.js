@@ -17,9 +17,8 @@ module.exports = {
   },
   'module': {
     'rules': [
-      { 'test': /\.js$/, 'loader': 'babel-loader', 'exclude': /node_modules/ },
-      { 'test': /\.jsx$/, 'loader': 'babel-loader', 'exclude': /node_modules/ },
-      { 'test': /\.css$/, 'use': ['style-loader', 'css-loader'] },
+      { 'test': /\.(js|jsx)$/, 'loader': 'babel-loader', 'exclude': /node_modules/ },
+      { 'test': /\.(scss|css)$/, 'use': ['style-loader', 'css-loader', 'sass-loader'] },
       { 'test': /\.(woff|woff2|eot|ttf|otf)$/, 'use': ['file-loader?outputPath=fonts/']}
     ]
   },

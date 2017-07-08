@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './materialize/css/materialize.min.css';
+import Navbar from './components/navbar';
+import Portfolio from './components/portfolio';
+import './index.scss';
 
 function Square(props) {
   return (
@@ -89,10 +91,22 @@ class Game extends React.Component {
   }
 }
 
+class Feather extends React.Component {
+  render() {
+    return (
+      <div>
+        <Navbar />
+        <Portfolio />
+      </div>
+    );
+
+  }
+}
+
 // ========================================
 
 ReactDOM.render(
-  <Game />,
+  <Feather />,
   document.getElementById('root')
 );
 
