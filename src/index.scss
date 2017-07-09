@@ -1,4 +1,10 @@
+@import 'color';
+
 #root {
     min-height: 100vh;
     height: 100%;
+}
+
+.feather-green {
+    background-color: $feather-green;
 }

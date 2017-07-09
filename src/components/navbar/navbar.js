@@ -4,7 +4,7 @@ export default class Navbar extends React.Component {
   render() {
     return (
       <nav>
-        <div className="nav-wrapper green accent-2">
+        <div className="nav-wrapper feather-green">
           <div className='container'>
             <a href="#" className="brand-logo">Logo</a>
             <ul className="right hide-on-med-and-down">
