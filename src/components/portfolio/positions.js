@@ -4,7 +4,7 @@ import './card-collection.scss';
 
 export default function Positions() {
   return (
-    <div className='col s12'>
+    <div className='col s12 l6'>
       <p className='grey-text text-darken-3'>Positions</p>
       <CardCollection />
     </div>

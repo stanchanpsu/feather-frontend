@@ -12,8 +12,10 @@ export default class Portfolio extends React.Component {
         <Value />
         <MainChart />
         <InfoCard />
-        <Positions />
-        <Watchlist />
+        <div className='row'>
+          <Positions />
+          <Watchlist />
+        </div>
       </div>
     );
   }
