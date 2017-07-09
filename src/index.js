@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Navbar from './components/navbar';
-import Portfolio from './components/portfolio';
+import Navbar from './components/navbar/navbar';
+import Portfolio from './components/portfolio/portfolio';
 import './index.scss';
 
 function Square(props) {
