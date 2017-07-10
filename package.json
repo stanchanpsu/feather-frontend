@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
     "materialize-css": "^0.99.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
@@ -32,6 +33,7 @@
     "clean": "rm -rf node_modules",
     "clean:install": "npm run clean && npm install",
     "build": "webpack -p",
-    "clean:build": "rm -rf dist && npm run build"
+    "clean:build": "rm -rf dist && npm run build",
+    "deploy": "./deploy/deploy.sh"
   }
 }

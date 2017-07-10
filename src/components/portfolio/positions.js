@@ -1,28 +1,30 @@
 import React from 'react';
+import lodash from 'lodash';
 import CardCollection from './card-collection';
 import StockPanel from './stock-panel';
 import './card-collection.scss';
+import FakePositions from '../../../mock-data/positions';
 
 export default class Positions extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      'stocks': ['TSLA', 'MSFT', 'CLDR', 'NFLX']
+      'stocks': FakePositions
     };
   }
 
   renderStock(stock) {
-    return (<StockPanel stock={stock} />);
+    return (<StockPanel ticker={stock.ticker} shares={stock.shares} price={stock.price} />);
   }
 
   render() {
     var stockPanels = [];
 
-    if (this.state.stocks.length === 0) {
+    if (lodash.isEmpty(this.state.stocks)) {
       stockPanels = <p className='card-content collection-item grey darken-3 white-text'>You have no positions.</p>;
     } else {
-      this.state.stocks.forEach((stock) => {
+      lodash.forOwn(this.state.stocks, (stock, stockKey) => {
         stockPanels.push(this.renderStock(stock));
       });
     }
