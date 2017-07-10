@@ -22,9 +22,12 @@ export default class Positions extends React.Component {
     var stockPanels = [];
 
     if (lodash.isEmpty(this.state.stocks)) {
-      stockPanels = <p className='card-content collection-item grey darken-3 white-text'>You have no positions.</p>;
+      stockPanels = (
+        <p className='card-content collection-item grey darken-3 white-text'>
+          You have no positions right now.
+        </p>);
     } else {
-      lodash.forOwn(this.state.stocks, (stock, stockKey) => {
+      lodash.forOwn(this.state.stocks, (stock) => {
         stockPanels.push(this.renderStock(stock));
       });
     }
