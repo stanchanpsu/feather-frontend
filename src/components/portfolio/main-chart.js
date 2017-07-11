@@ -1,5 +1,6 @@
 import React from 'react';
 import './main-chart.scss';
+import Chartjs from 'chart.js';
 
 export default class MainChart extends React.Component {
   render() {

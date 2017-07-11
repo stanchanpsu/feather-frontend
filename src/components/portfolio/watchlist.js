@@ -3,31 +3,23 @@ import lodash from 'lodash';
 import CardCollection from './card-collection';
 import StockPanel from './stock-panel';
 import './card-collection.scss';
-import FakeWatchlist from '../../../mock-data/watchlist';
 
 export default class Watchlist extends React.Component {
 
-  constructor() {
-    super();
-    this.state = {
-      'stocks': FakeWatchlist
-    };
-  }
-
   renderStock(stock) {
-    return (<StockPanel ticker={stock.ticker} watchlist={true} price={stock.price} />);
+    return (<StockPanel key={stock.ticker} ticker={stock.ticker} watchlist={true} price={stock.price} />);
   }
 
   render() {
     var stockPanels = [];
 
-    if (lodash.isEmpty(this.state.stocks)) {
+    if (lodash.isEmpty(this.props.watchlist)) {
       stockPanels = (
         <p className='card-content collection-item grey darken-3 white-text'>
           You aren't watching anything right now.
         </p>);
     } else {
-      lodash.forOwn(this.state.stocks, (stock) => {
+      lodash.each(this.props.watchlist, (stock) => {
         stockPanels.push(this.renderStock(stock));
       });
     }

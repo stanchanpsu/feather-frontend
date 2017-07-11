@@ -10,6 +10,11 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 
 module.exports = {
   'devtool': 'cheap-eval-source-map',
+  'node': {
+    'fs': 'empty',
+    'net': 'empty', 
+    'tls': 'empty'
+  },
   'entry': './src/index.js',
   'output': {
     'path': path.resolve(__dirname, 'dist'),
