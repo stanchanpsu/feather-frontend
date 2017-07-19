@@ -27,5 +27,12 @@ module.exports = {
       { 'test': /\.(woff|woff2|eot|ttf|otf)$/, 'use': ['file-loader?outputPath=fonts/']}
     ]
   },
-  'plugins': [HtmlWebpackPluginConfig]
+  'plugins': [HtmlWebpackPluginConfig],
+  'devServer': {
+    'historyApiFallback': true,
+    'contentBase': './',
+    'host': process.env.IP,
+    'port': process.env.PORT,
+    "public": "feather-frontend.sman5922.c9users.io" //no trailing slash
+    }
 };

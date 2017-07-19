@@ -32,6 +32,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
+    "cloud": "webpack-dev-server --port 8080 --host 0.0.0.0 --content-base feather-frontend/dist/",
     "lint": "eslint . --fix --ignore-path ./.eslintignore -f node_modules/eslint-html-reporter/reporter.js -o reporters/eslint-report.html",
     "clean": "rm -rf node_modules",
     "clean:install": "npm run clean && npm install",

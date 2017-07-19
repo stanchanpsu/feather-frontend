@@ -16,25 +16,28 @@ export default class Portfolio extends React.Component {
 
   constructor() {
     super();
-    // var chartContext = document.getElementById('main-chart').getContext('2d');
     this.state = {
-      'positions': FakePositions,
-      'chartData': {
-        'labels': ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        'datasets': [{
-          'label': 'My First dataset',
-          'backgroundColor': 'rgb(255, 99, 132)',
-          'borderColor': 'rgb(255, 99, 132)',
-          'data': [0, 10, 5, 2, 20, 30, 45],
-        }]
-      },
-      'chartOptions': {}
+      'positions': FakePositions
     };
 
     this.getChartData().then((results) => {
-      lodash.each(results, (results) => {
-        console.log(results);
+      var dataArrays = [];
+      var data = new Array(391);
+      lodash.fill(data, null);
+      lodash.each(results, (result) => {
+        console.log(result);
+        // console.log(result);
+        // let tmpArray = lodash.values(result['Time Series (1min)']);
+        // console.log(tmpArray);
+        // let cleanArray = [];
+        // lodash.each(tmpArray, (timeStamp) => {
+        //   cleanArray.push(Number(timeStamp['4. close']));
+        // });
+        // dataArrays.push(cleanArray);
+        // console.log(cleanArray);
       });
+      // var result = lodash.zipWith(dataArrays, lodash.add);
+      // console.log(result);
     });
 
   }

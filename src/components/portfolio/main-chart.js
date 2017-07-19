@@ -2,21 +2,25 @@ import React from 'react';
 import './main-chart.scss';
 import Chart from 'chart.js';
 import colors from '../../color';
+import lodash from 'lodash';
+import stockApi from '../../stock-api';
 
 export default class MainChart extends React.Component {
-
+  
   createChart(context) {
+    var labelArray = new Array(12);
+    lodash.fill(labelArray, '*');
     var chart = new Chart(context, {
       // The type of chart we want to create
       'type': 'line',
 
       // The data for our dataset
       'data': {
-        'labels': ['January', 'February', 'March', 'April', 'May', 'June', 'July','January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        'labels': labelArray,
         'datasets': [
           {
             'borderColor': colors.featherGreen,
-            'data': [0, 10, 5, 2, 20, 30, 45, 0, 10, 5, 2, 20, 30, 45],
+            'data': [0, 10, 5, 2, 20, 30, 45, 0, 10, 5, null, null, null, null],
             'fill': false,
             'pointRadius': 0,
             'lineTension': 0
