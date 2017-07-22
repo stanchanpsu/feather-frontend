@@ -12,7 +12,7 @@ module.exports = {
   'devtool': 'cheap-eval-source-map',
   'node': {
     'fs': 'empty',
-    'net': 'empty', 
+    'net': 'empty',
     'tls': 'empty'
   },
   'entry': './src/index.js',
@@ -24,15 +24,25 @@ module.exports = {
     'rules': [
       { 'test': /\.(js|jsx)$/, 'loader': 'babel-loader', 'exclude': /node_modules/ },
       { 'test': /\.(scss|css)$/, 'use': ['style-loader', 'css-loader', 'sass-loader'] },
-      { 'test': /\.(woff|woff2|eot|ttf|otf)$/, 'use': ['file-loader?outputPath=fonts/']}
+      { 'test': /\.(woff|woff2|eot|ttf|otf)$/, 'use': ['file-loader?outputPath=fonts/'] }
     ]
   },
   'plugins': [HtmlWebpackPluginConfig],
-  'devServer': {
+  // 'devServer': {
+  //   'historyApiFallback': true,
+  //   'contentBase': './',
+  //   'host': process.env.IP,
+  //   'port': process.env.PORT,
+  //   'public': process.env.DEV_SERVER_URL//'feather-frontend.sman5922.c9users.io'
+  // }
+};
+
+if (process.env.C9) {
+  exports.devServer = {
     'historyApiFallback': true,
     'contentBase': './',
     'host': process.env.IP,
     'port': process.env.PORT,
-    "public": "feather-frontend.sman5922.c9users.io" //no trailing slash
-    }
-};
+    'public': 'feather-frontend.sman5922.c9users.io'
+  };
+}
