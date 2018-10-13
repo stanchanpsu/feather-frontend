@@ -7,7 +7,7 @@ import './card-collection.scss';
 export default class Watchlist extends React.Component {
 
   renderStock(stock) {
-    return (<StockPanel key={stock.ticker} ticker={stock.ticker} watchlist={true} price={stock.price} />);
+    return (<StockPanel key={stock.ticker} ticker={stock.ticker} watchlist={true} price={stock.price} stockName={stock.stockName} />);
   }
 
   render() {

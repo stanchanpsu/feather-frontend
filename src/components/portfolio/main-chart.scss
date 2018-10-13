@@ -1,5 +1,6 @@
 #main-chart-card {
     height: 30rem;
+    margin-bottom: 4rem;
 }
 
 #main-chart-card-content {
@@ -12,4 +13,14 @@
 #main-chart-wrapper {
     height: 90%;
     width: 100%;
+}
+
+#main-chart-card-action {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.chart-btn {
+    margin-right: 0px !important; 
+    padding: 0 1rem;
 }

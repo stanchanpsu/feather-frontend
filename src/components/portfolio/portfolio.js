@@ -20,25 +20,25 @@ export default class Portfolio extends React.Component {
       'positions': FakePositions
     };
 
-    this.getChartData().then((results) => {
-      var dataArrays = [];
-      var data = new Array(391);
-      lodash.fill(data, null);
-      lodash.each(results, (result) => {
-        console.log(result);
-        // console.log(result);
-        // let tmpArray = lodash.values(result['Time Series (1min)']);
-        // console.log(tmpArray);
-        // let cleanArray = [];
-        // lodash.each(tmpArray, (timeStamp) => {
-        //   cleanArray.push(Number(timeStamp['4. close']));
-        // });
-        // dataArrays.push(cleanArray);
-        // console.log(cleanArray);
-      });
-      // var result = lodash.zipWith(dataArrays, lodash.add);
-      // console.log(result);
-    });
+    // this.getChartData().then((results) => {
+    //   var dataArrays = [];
+    //   var data = new Array(391);
+    //   lodash.fill(data, null);
+    //   lodash.each(results, (result) => {
+    //     console.log(result);
+    //     // console.log(result);
+    //     // let tmpArray = lodash.values(result['Time Series (1min)']);
+    //     // console.log(tmpArray);
+    //     // let cleanArray = [];
+    //     // lodash.each(tmpArray, (timeStamp) => {
+    //     //   cleanArray.push(Number(timeStamp['4. close']));
+    //     // });
+    //     // dataArrays.push(cleanArray);
+    //     // console.log(cleanArray);
+    //   });
+    //   // var result = lodash.zipWith(dataArrays, lodash.add);
+    //   // console.log(result);
+    // });
 
   }
 
@@ -55,7 +55,7 @@ export default class Portfolio extends React.Component {
       <div className='container'>
         <Value />
         <MainChart currentStockDisplayed={this.state.positions} chartData={this.state.chartData} chartOptions={this.state.chartOptions} createChart={(context) => this.createChart(context)}/>
-        <InfoCard />
+        {/* <InfoCard /> */}
         <div className='row'>
           <Positions positions={FakePositions} />
           <Watchlist watchlist={FakeWatchlist} />
