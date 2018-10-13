@@ -8,19 +8,17 @@ import stockApi from '../../stock-api';
 export default class MainChart extends React.Component {
   
   createChart(context, plotPoints) {
-    var labelArray = new Array(78);
-    lodash.fill(labelArray, '*');
     var chart = new Chart(context, {
       // The type of chart we want to create
       'type': 'line',
 
       // The data for our dataset
       'data': {
-        'labels': labelArray,
+        'labels': lodash.map(plotPoints, 'time'),
         'datasets': [
           {
             'borderColor': colors.featherGreen,
-            'data': plotPoints,
+            'data': lodash.map(plotPoints, 'close'),
             'fill': false,
             'pointRadius': 0,
             'lineTension': 0
@@ -56,6 +54,14 @@ export default class MainChart extends React.Component {
               'display': false
             }
           ]
+        },
+        'tooltips': {
+          'enabled': true,
+          'mode': 'index',
+          'intersect': false,
+          'titleFontFamily': 'Roboto',
+          'bodyFontFamily': 'Roboto',
+          'displayColors': false
         }
       }
     });
@@ -68,15 +74,17 @@ export default class MainChart extends React.Component {
     stockApi.getIntraday('TSLA', '5min')
       .then((result) => {
         var timeSeries = result['Time Series (5min)'];
-        // console.log(timeSeries);
+        console.log(timeSeries);
         var todayTimeSeries = lodash.pickBy(timeSeries, (value, key) => {
           return new Date(key).getDate() == new Date().getDate();
         });
-        var todayCloseTimeSeries = lodash.map(todayTimeSeries, (timeData) => {
-          return timeData['4. close'];
-        });
+        console.log(todayTimeSeries);
+        var todayCloseTimeSeries = lodash.reverse(lodash.map(todayTimeSeries, (timeData, key) => {
+          var dateTime = new Date(key);
+          return {'time': dateTime.getHours() + ':' + ('0' + dateTime.getMinutes()).slice(-2), 'close': parseFloat(timeData['4. close']).toFixed(2)};
+        }));
         console.log(todayCloseTimeSeries);
-        this.createChart(context, todayCloseTimeSeries);
+        this.createChart(context,todayCloseTimeSeries);
       });
   }
 
